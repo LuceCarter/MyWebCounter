@@ -1,11 +1,13 @@
-﻿@{
+﻿@model MyWebCounter.Models.IncrementViewModel
+
+@{
     ViewData["Title"] = "My First Web Counter";
 }
 
-<h1>Counter</h1>
-
-<h3>@ViewData["Count"]</h3>
-
-<input type="button"
-       value="Increment"
-       onclick="location.href='@Url.Action("Index","Counter")'" />
+<div class="text-center">
+    <h1 class="display-4">Counter</h1>
+    <p>@Html.DisplayFor(m => m.Count)</p>
+    <form asp-action="Increment">
+        <input type="submit" value="Increment!" />
+    </form>
+</div>
