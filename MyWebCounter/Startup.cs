@@ -51,7 +51,7 @@ namespace MyWebCounter
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Counter}/{action=Index}/{id?}");
             });
         }
     }

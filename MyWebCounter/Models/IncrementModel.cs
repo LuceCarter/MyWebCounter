@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace MyWebCounter.Models
 {
-    public class IncrementViewModel
+    public class IncrementModel
     {
         public int Count = 0;
     }

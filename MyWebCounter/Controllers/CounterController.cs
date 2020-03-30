@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MyWebCounter.Models;
+using System.Diagnostics;
 
 namespace MyWebCounter.Controllers
 {
@@ -20,18 +16,18 @@ namespace MyWebCounter.Controllers
         }
         public IActionResult Index()
         {
-            IncrementViewModel incrementViewModel = new IncrementViewModel();
-            incrementViewModel.Count = _count;
-            return View(incrementViewModel);
+            IncrementModel incrementModel = new IncrementModel();
+            incrementModel.Count = _count;
+            return View(incrementModel);
         }
         
         [HttpPost]
         public IActionResult Increment()
         {
             _count++;
-            IncrementViewModel incrementViewModel = new IncrementViewModel();
-            incrementViewModel.Count = _count;
-            return View("Index", incrementViewModel);
+            IncrementModel incrementModel = new IncrementModel();
+            incrementModel.Count = _count;
+            return View("Index", incrementModel);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
